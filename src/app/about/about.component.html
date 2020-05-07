@@ -1,0 +1,24 @@
+
+
+  <div class="periodic" [hidden]="show">
+    <ng-container *ngFor='let element of height ;let i = index'> 
+      <div class="periodic-row">
+      <ng-container *ngFor='let element2 of width  ;let j = index'>
+        <div *ngIf ="elementArr[i*18+j];else another"class="cell "
+             [ngClass]="{'red': elementArr[i*18+j].switch}"
+              (click)="onSelect(elementArr[i*18+j])">
+          <div class="element"  >
+            <div class="at_num">{{elementArr[i*18+j].number}} </div>
+            <div class="symbol">{{elementArr[i*18+j].symbol}} </div>
+          </div>
+        </div>
+      </ng-container>
+</div>
+  </ng-container>
+
+ <button class="EDS" (click)=" elementchick()">done</button>
+  </div>
+  <ng-template #another>
+    <div class="cell">
+    </div>
+  </ng-template>

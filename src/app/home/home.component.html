@@ -1,0 +1,21 @@
+<p>home works!</p>
+ 
+    
+    <div class="dx-field">
+            <div class="dx-field-value periodicSearch"  (click)="periodicClick()">
+                EDS:
+                <dx-tag-box id="ta"
+                [dropDownOptions] ="{contentTemplate:'test'}"
+                (onValueChanged)="testFuntion($event)"
+                    [value]="EDS"
+                    [openOnFieldClick]="false"
+                    [opened]="!periodicShow"
+                    >
+                    <div *dxTemplate="let data of 'test'">
+                         <app-about   [show]="periodicShow" (selectedDone)="ElementPeriodic($event)"  (closeList)="closeTable()" ></app-about>
+                      </div>
+                </dx-tag-box>
+            </div>
+           
+        </div>
+    
